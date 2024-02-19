@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: formsphere
+      MYSQL_DATABASE: formsphere
+      MYSQL_USER: formsphere
+
+      #Keep this same as root password
+      MYSQL_PASSWORD: formsphere
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  #So you can view database in web gui
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: formsphere
+    ports:
+      - "8080:80"
+
+volumes:
+  db_data:

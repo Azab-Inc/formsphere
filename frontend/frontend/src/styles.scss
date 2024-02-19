@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    nav {
+      a {
+        @apply text-primary;
+      }
+    }
+    section {
+      @apply w-full flex justify-center items-center;
+      .container {
+        @apply min-w-[90%] max-w-[90%] mx-auto;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          @apply text-primary;
+        }
+
+        h1 {
+          @apply text-4xl font-bold;
+        }
+
+        button {
+          @apply px-8 py-4 rounded-md text-xl;
+        }
+
+        .btn-pri {
+          @apply text-white bg-primary;
+        }
+
+        .btn-sec {
+          @apply text-white bg-secondary;
+        }
+
+        form {
+          input {
+            @apply text-primary p-3 border-2 focus:border-[3px] rounded-md border-secondary focus:border-primary my-3 placeholder:text-secondary;
+          }
+        }
+      }
+    }
+  }
+}

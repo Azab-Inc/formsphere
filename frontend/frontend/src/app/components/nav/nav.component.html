@@ -1,0 +1,20 @@
+@if (showNav) {
+  <div class="fixed top-4 w-full">
+    <nav
+      class="mx-auto rounded-full bg-white shadow-sm py-2 px-6 w-[95%] flex items-center justify-between shadow-secondary"
+    >
+      <div>
+        <a routerLink="/"><img src="assets/images/logo.webp" class="w-20" /></a>
+      </div>
+      <div class="flex flex-row gap-3">
+        <a routerLink="/my-forms">My forms</a>
+        <a routerLink="/config">Config</a>
+      </div>
+      <div class="flex flex-row gap-3">
+        <a routerLink="/feedback">Send feedback</a>
+        <a routerLink="/help">Help</a>
+        <a routerLink="/login">Logout</a>
+      </div>
+    </nav>
+  </div>
+}

@@ -1,0 +1,126 @@
+<section class="z-30">
+  <div class="container">
+    <h1 class="text-center mb-0 md:mb-4">Setup</h1>
+
+    <div
+      class="flex mx-auto flex-col-reverse md:flex-row items-center justify-between gap-x-3"
+    >
+      <div>
+        <form
+          action="#"
+          method="post"
+          class="flex flex-col text-secondary md:h-60"
+        >
+          @if (!showDb) {
+            <div class="flex flex-col md:flex-row gap-x-2">
+              <div class="flex flex-col">
+                <label>Email</label>
+                <input type="email" name="email" required />
+              </div>
+              <div class="flex flex-col">
+                <label
+                  >Timezone<app-tooltip
+                    class="inline-block mx-2"
+                    tooltipText="Your tz database time zone"
+                    position.Right
+                  ></app-tooltip>
+                </label>
+                <input type="text" name="timezone" required />
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-x-2">
+              <div class="flex flex-col">
+                <label>Password</label>
+                <input type="password" name="password" required />
+              </div>
+              <div class="flex flex-col">
+                <label>Confirm Password</label>
+                <input type="password" name="confirmPassword" required />
+              </div>
+            </div>
+
+            <button class="btn-pri" (click)="showDb = true">
+              Setup database 👉
+            </button>
+          } @else {
+            <div>
+              <span>These are the details in the docker compose file.</span>
+              <div class="flex flex-col">
+                <label
+                  >Database host
+                  <app-tooltip
+                    class="inline-block mx-2"
+                    tooltipText="Keep in mind this is MySQL so the port will be 3306"
+                  ></app-tooltip
+                ></label>
+                <input
+                  value="{{ defaultHostname }}"
+                  type="text"
+                  name="dbHost"
+                />
+              </div>
+              <div class="flex flex-col md:flex-row gap-x-2">
+                <div class="flex flex-col">
+                  <label
+                    >Database name
+                    <app-tooltip
+                      class="inline-block mx-2"
+                      tooltipText="Good idea to change if you have multiple instances running"
+                      position.Right
+                    ></app-tooltip>
+                  </label>
+                  <input
+                    value="formsphere"
+                    type="text"
+                    name="dbName"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col">
+                  <label>Database password </label>
+                  <input
+                    value="formsphere"
+                    type="text"
+                    name="dbPassword"
+                    required
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:gap-x-2 justify-center items-center"
+              >
+                <button class="btn-sec" (click)="showDb = false">
+                  Go back 👈
+                </button>
+                <button class="btn-pri">Submit</button>
+              </div>
+            </div>
+          }
+        </form>
+      </div>
+      <div class="flex justify-center items-center md:h-60 md:my-0 my-4">
+        <img src="/assets/images/logo.webp" alt="logo" />
+      </div>
+    </div>
+  </div>
+</section>
+<div class="z-10">
+  <svg
+    viewBox="0 0 1436 200"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    class="rotate-180 fixed w-full left-0 bottom-0 opacity-25"
+    style="pointer-events: none"
+  >
+    <path
+      fill="#9071fe"
+      d="M 0 0 C 311.6 0 467.4 110 779 110 L 779 110 L 779 0 L 0 0 Z"
+      stroke-width="0"
+    ></path>
+    <path
+      fill="#9071fe"
+      d="M 778 110 C 1077.2 110 1226.8 200 1526 200 L 1526 200 L 1526 0 L 778 0 Z"
+      stroke-width="0"
+    ></path>
+  </svg>
+</div>

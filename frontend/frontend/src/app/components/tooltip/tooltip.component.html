@@ -1,0 +1,17 @@
+<div class="tooltip relative">
+  <div
+    class="tooltip-icon bg-secondary flex items-center justify-center rounded-full w-6 aspect-square cursor-pointer"
+    (click)="showTooltip = !showTooltip"
+  >
+    <b class="text-white">?</b>
+  </div>
+
+  @if (showTooltip) {
+    <div
+      class="tooltip-text bg-gray-800 text-white text-center rounded px-2 py-1 absolute z-10 min-w-36"
+      [ngClass]="positionClass"
+    >
+      {{ tooltipText }}
+    </div>
+  }
+</div>
